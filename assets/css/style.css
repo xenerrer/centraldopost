@@ -415,6 +415,7 @@ strong, b { font-weight: 650; }
 }
 .client:nth-child(4n) { border-right: 0; }
 .client:nth-last-child(-n + 4) { border-bottom: 0; }
+.client.client--gray img { filter: grayscale(1) contrast(0.9); opacity: 0.7; }
 .client img {
   width: calc(var(--w, 140) * var(--k, 1) * 1px); max-width: 100%; height: auto;
   filter: brightness(0); opacity: 0.64;
@@ -423,6 +424,7 @@ strong, b { font-weight: 650; }
 @media (hover: hover) and (pointer: fine) {
   .client:hover { background: var(--surface); }
   .client:hover img { filter: brightness(1); opacity: 1; }
+  .client.client--gray:hover img { filter: none; opacity: 1; }
   .client--mono:hover img { filter: brightness(0); opacity: 0.9; }   /* só existe a versão em uma cor */
 }
 @media (max-width: 1000px) {
