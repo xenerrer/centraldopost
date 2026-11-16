@@ -210,15 +210,18 @@
         <img class="video__poster" src="assets/img/medica-1280.webp" srcset="assets/img/medica-1280.webp 1280w, assets/img/medica-2000.webp 2000w" sizes="100vw" alt="Médica no consultório às 7h da manhã, sorrindo para o celular com um café ao lado" loading="lazy" width="1280" height="720" decoding="async">
         <div class="video__overlay">
           <h2 class="h2" id="video-title">Veja a ferramenta rodando de verdade</h2>
-          <button class="play" type="button" data-video-open aria-label="Assistir ao vídeo de demonstração (2 minutos)">
+          <button class="play" type="button" data-video-open aria-label="Assistir ao vídeo de demonstração (30 segundos)">
             <svg class="ico" aria-hidden="true"><use href="#i-play"/></svg>
           </button>
         </div>
       </div>
       <dialog class="video__dialog" data-video-dialog aria-label="Vídeo de demonstração">
         <form method="dialog"><button class="video__close" aria-label="Fechar vídeo">×</button></form>
-        <div class="video__frame" data-video-frame data-video-src="">
-          <p class="mono">[ placeholder de vídeo ]<br>embed do YouTube/Vimeo — demonstração da ferramenta</p>
+        <div class="video__frame" data-video-frame>
+          <video data-video controls playsinline preload="none" width="1920" height="1080" poster="assets/video/como-funciona-poster.webp" aria-label="Demonstração em 30 segundos: escolher o plano, cadastrar a marca, acompanhar o kit visual e receber a arte todo dia no WhatsApp">
+            <source src="assets/video/como-funciona.mp4" type="video/mp4">
+            <a href="assets/video/como-funciona.mp4">Baixar o vídeo de demonstração (MP4)</a>
+          </video>
         </div>
       </dialog>
     </section>

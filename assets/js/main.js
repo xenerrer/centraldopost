@@ -357,15 +357,15 @@
 
   /* ---------- vídeo ---------- */
   const dlg = $('[data-video-dialog]');
+  const vid = $('[data-video]');
   $('[data-video-open]')?.addEventListener('click', () => {
-    const frame = $('[data-video-frame]');
-    const src = frame.dataset.videoSrc;
-    if (src && !frame.querySelector('iframe')) {
-      frame.innerHTML = `<iframe src="${src}" title="Vídeo de demonstração da Central do Post" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
-    }
     dlg.showModal();
+    if (vid) {
+      vid.currentTime = 0;
+      vid.play().catch(() => {});   /* se o navegador barrar, os controles nativos continuam ali */
+    }
   });
-  dlg?.addEventListener('close', () => { const f = $('[data-video-frame] iframe'); if (f) f.src = f.src; });
+  dlg?.addEventListener('close', () => vid?.pause());
   dlg?.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
 
   /* ---------- barra fixa no celular ---------- */
