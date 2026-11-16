@@ -398,6 +398,56 @@ strong, b { font-weight: 650; }
 }
 
 /* =========================================================
+   MARCAS ATENDIDAS PELA ALLU (logos)
+   Logos em um tom só (silhueta em tinta); a cor original volta no hover.
+   --w = largura óptica de cada logo (px), definida no HTML; --k = escala por breakpoint.
+   ========================================================= */
+.clients { position: relative; z-index: var(--z-base); padding-bottom: clamp(80px, 10vw, 144px); }
+.clients__inner { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr); gap: clamp(32px, 5vw, 88px); align-items: end; }
+.clients__title { font-size: clamp(1.55rem, 1.1rem + 1.5vw, 2.35rem); font-stretch: 112%; font-weight: 760; line-height: 1.06; letter-spacing: -0.028em; text-wrap: balance; max-width: 16ch; }
+.clients__text { margin-top: var(--s4); color: var(--ink-2); max-width: 32ch; text-wrap: pretty; }
+.clients__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.client {
+  display: grid; place-items: center;
+  min-height: clamp(96px, 8.6vw, 128px); padding: 16px 14px;
+  border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  transition: background-color 240ms ease;
+}
+.client:nth-child(4n) { border-right: 0; }
+.client:nth-last-child(-n + 4) { border-bottom: 0; }
+.client img {
+  width: calc(var(--w, 140) * var(--k, 1) * 1px); max-width: 100%; height: auto;
+  filter: brightness(0); opacity: 0.64;
+  transition: filter 240ms ease, opacity 240ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .client:hover { background: var(--surface); }
+  .client:hover img { filter: brightness(1); opacity: 1; }
+  .client--mono:hover img { filter: brightness(0); opacity: 0.9; }   /* só existe a versão em uma cor */
+}
+@media (max-width: 1000px) {
+  .clients__inner { grid-template-columns: 1fr; align-items: start; }
+  .clients__title { max-width: 22ch; }
+  .clients__text { max-width: 46ch; }
+}
+@media (max-width: 760px) {
+  .clients__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .client { --k: 0.86; min-height: 92px; padding-inline: 10px; }
+  .client:nth-child(4n) { border-right: 1px solid var(--line); }
+  .client:nth-last-child(-n + 4) { border-bottom: 1px solid var(--line); }
+  .client:nth-child(3n) { border-right: 0; }
+  .client:nth-last-child(-n + 3) { border-bottom: 0; }
+}
+@media (max-width: 520px) {
+  .clients__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .client { min-height: 84px; }
+  .client:nth-child(3n) { border-right: 1px solid var(--line); }
+  .client:nth-last-child(-n + 3) { border-bottom: 1px solid var(--line); }
+  .client:nth-child(2n) { border-right: 0; }
+  .client:nth-last-child(-n + 2) { border-bottom: 0; }
+}
+
+/* =========================================================
    O PROBLEMA
    ========================================================= */
 .problem { background: var(--surface); border-block: 1px solid var(--line); }
