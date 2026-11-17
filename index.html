@@ -12,7 +12,7 @@
   <meta property="og:image" content="assets/img/og.jpg">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/style.css?v=6">
+  <link rel="stylesheet" href="assets/css/style.css?v=7">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -254,51 +254,43 @@
       </div>
     </section>
 
-    <!-- ============ ANTES E DEPOIS (slider) ============ -->
+    <!-- ============ ANTES E DEPOIS (perfis reais) ============ -->
     <section class="ba section" aria-labelledby="ba-title">
-      <div class="wrap ba__inner">
-        <div class="ba__copy">
+      <div class="wrap">
+        <div class="ba__head">
           <h2 class="h2" id="ba-title">Perfil parado × perfil que vende</h2>
-          <p class="lede">O que muda em 90 dias de publicação constante: identidade reconhecível, grade organizada e um perfil que responde por você quando o cliente pesquisa seu nome.</p>
-          <ul class="checks" data-stagger>
-            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Grade com identidade única e reconhecível</li>
-            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Frequência diária sem depender da sua agenda</li>
-            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Legendas que explicam o seu serviço</li>
-            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Perfil pronto quando o cliente pesquisa o seu nome</li>
-          </ul>
+          <p class="lede">Dois perfis que começaram com a nossa equipe e hoje vendem todo dia. Os números são de seguidores no Instagram.</p>
         </div>
-
-        <div class="compare" data-compare style="--pos: 50%">
-          <div class="compare__pane compare__pane--after" aria-hidden="true">
-            <div class="profile">
-              <div class="profile__top"><span class="profile__avatar"></span><span class="profile__name"><b>dra.helena</b><span>Neurologista · Chapecó</span></span></div>
-              <div class="profile__grid profile__grid--after">
-                <span class="t t-lime"><b>3 sinais</b></span><span class="t"><img loading="lazy" decoding="async" width="1280" height="720" src="assets/img/medica-1280.webp" alt=""></span><span class="t t-ink"><b>Mito ou verdade?</b></span>
-                <span class="t"><img loading="lazy" decoding="async" width="480" height="600" src="assets/img/cafe.webp" alt=""></span><span class="t t-ink"><b>Agenda aberta</b></span><span class="t t-lime"><b>Dica da semana</b></span>
-                <span class="t t-lime"><b>Você pergunta</b></span><span class="t"><img loading="lazy" decoding="async" width="480" height="600" src="assets/img/psicologa.webp" alt=""></span><span class="t t-ink"><b>Bastidores</b></span>
-              </div>
+        <div class="growth" data-growth>
+          <article class="gcard">
+            <header class="gcard__top"><span class="gcard__avatar" aria-hidden="true">E</span><span class="gcard__name"><b>@erick_loureiro</b><span>Erick Loureiro · Especialista em Mente Subconsciente</span></span></header>
+            <div class="gcard__nums">
+              <div><span class="gcard__tag">Quando começamos</span><b class="gcard__n gcard__n--old">154 mil</b></div>
+              <svg class="gcard__arrow ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+              <div><span class="gcard__tag gcard__tag--now">Hoje</span><b class="gcard__n" data-from="154" data-to="241" data-suffix=" mil" aria-label="241 mil seguidores">241 mil</b></div>
             </div>
-            <span class="compare__label compare__label--after">Depois · 90 dias</span>
-          </div>
-          <div class="compare__pane compare__pane--before" aria-hidden="true">
-            <div class="profile profile--before">
-              <div class="profile__top"><span class="profile__avatar profile__avatar--empty"></span><span class="profile__name"><b>dra.helena</b><span>Neurologista · Chapecó</span></span></div>
-              <div class="profile__grid">
-                <span class="t t-old"><img loading="lazy" decoding="async" width="480" height="600" src="assets/img/cafe.webp" alt=""></span><span class="t t-old2"><b>Feliz Natal!</b></span><span class="t t-old"><img loading="lazy" decoding="async" width="1280" height="720" src="assets/img/medica-1280.webp" alt=""></span>
-                <span class="t t-empty"></span><span class="t t-empty"></span><span class="t t-empty"></span>
-                <span class="t t-empty"></span><span class="t t-empty"></span><span class="t t-empty"></span>
-              </div>
+            <div class="gcard__bar" aria-hidden="true"><i data-from="154" data-to="241"></i></div>
+            <p class="gcard__gain">+87 mil seguidores<span> · crescimento de 56%</span></p>
+          </article>
+          <article class="gcard">
+            <header class="gcard__top"><span class="gcard__avatar" aria-hidden="true">E</span><span class="gcard__name"><b>@elos.dh</b><span>ELOS Desenvolvimento Humano</span></span></header>
+            <div class="gcard__nums">
+              <div><span class="gcard__tag">Quando começamos</span><b class="gcard__n gcard__n--old">12 mil</b></div>
+              <svg class="gcard__arrow ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+              <div><span class="gcard__tag gcard__tag--now">Hoje</span><b class="gcard__n" data-from="12" data-to="24" data-suffix=" mil" aria-label="24 mil seguidores">24 mil</b></div>
             </div>
-            <span class="compare__label">Antes</span>
-          </div>
-          <div class="compare__handle" aria-hidden="true"><span><svg class="ico"><use href="#i-drag"/></svg></span></div>
-          <label class="sr-only" for="compare-range">Comparar antes e depois</label>
-          <input class="compare__range" id="compare-range" type="range" min="0" max="100" value="50" data-compare-range>
+            <div class="gcard__bar" aria-hidden="true"><i data-from="12" data-to="24"></i></div>
+            <p class="gcard__gain">+12 mil seguidores<span> · o dobro do perfil</span></p>
+          </article>
         </div>
+        <ul class="checks checks--row" data-stagger>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Grade com identidade única e reconhecível</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Frequência diária sem depender da sua agenda</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Legendas que explicam o seu serviço</li>
+        </ul>
       </div>
     </section>
 
-    <!-- ============ OBJEÇÕES (cartões empilhados) ============ -->
     <section class="faqcards section" aria-labelledby="obj-title">
       <div class="wrap">
         <h2 class="h2 faqcards__title" id="obj-title">As três perguntas que todo mundo faz antes de assinar</h2>
@@ -355,20 +347,15 @@
             <span class="score__stars" aria-hidden="true">★★★★★</span>
             <span class="score__l">nota média dos assinantes</span>
           </div>
-          <figure class="quote" data-stagger-item><blockquote>"Eu passava o domingo tentando montar post. Hoje abro o WhatsApp às 7h e publico em dois minutos."</blockquote><figcaption><span class="avatar" aria-hidden="true">A</span><span>Advogada trabalhista · SP</span></figcaption></figure>
-          <figure class="quote" data-stagger-item><blockquote>"Achei que ia ser genérico. Chegou com as minhas cores, meu logo e meu telefone — pareceu feito por uma agência."</blockquote><figcaption><span class="avatar" aria-hidden="true">D</span><span>Dentista · Curitiba</span></figcaption></figure>
-          <figure class="quote" data-stagger-item><blockquote>"As legendas respeitam o código de ética do conselho. Isso pra mim era o principal medo."</blockquote><figcaption><span class="avatar" aria-hidden="true">P</span><span>Psicóloga · Salvador</span></figcaption></figure>
-          <figure class="quote" data-stagger-item><blockquote>"Pedi ajuste na primeira semana e voltou corrigido no mesmo dia. Atendimento de gente, não de robô."</blockquote><figcaption><span class="avatar" aria-hidden="true">A</span><span>Arquiteto · Florianópolis</span></figcaption></figure>
-          <figure class="quote" data-stagger-item><blockquote>"Fechei três alunos que disseram ter me achado pelo Instagram. Antes disso o perfil vivia parado."</blockquote><figcaption><span class="avatar" aria-hidden="true">P</span><span>Personal trainer · Goiânia</span></figcaption></figure>
-          <figure class="quote" data-stagger-item><blockquote>"Custa menos que meia diária de designer e entrega arte todo dia. A conta fecha sozinha."</blockquote><figcaption><span class="avatar" aria-hidden="true">C</span><span>Contadora · Porto Alegre</span></figcaption></figure>
+          <figure class="quote quote--video" data-stagger-item>
+            <video controls playsinline preload="none" width="480" height="854" poster="assets/video/depoimento-cliente-poster.jpg" aria-label="Depoimento em vídeo de um cliente da Allu">
+              <source src="assets/video/depoimento-cliente.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <figure class="quote quote--long" data-stagger-item><blockquote><p>"Contratamos a Allu no início de 2026 com um objetivo claro: melhorar o nosso fluxo de geração de demandas. Desde o fechamento do contrato, essa estrutura dentro da Auticomp evoluiu de forma significativa.</p><p>Desde o início, o time da Allu entregou um trabalho personalizado e com excelência. A estruturação da nossa atração de leads, as vendas inbound e outbound e as demais técnicas aplicadas foram fundamentais para o crescimento da Auticomp neste período. As reuniões semanais de acompanhamento, remotas e também presenciais, mostram o cuidado e o comprometimento do time com a qualidade de tudo o que entrega.</p><p>Preciso destacar o trabalho fenomenal do Rouglas, que é uma máquina! E, não menos importante, o Jair, pelo acompanhamento, pela coordenação e pela estratégia do time de tráfego, edição de vídeos e design.</p><p>Mais do que uma agência, a Allu se tornou uma verdadeira parceira de crescimento. Somos muito gratos pela confiança, pela dedicação de toda a equipe e pelos resultados que já conquistamos juntos. Temos certeza de que ainda vamos construir muita coisa boa por aí!!"</p></blockquote><figcaption><span class="avatar" aria-hidden="true">A</span><span>Auticomp</span></figcaption></figure>
+          <figure class="quote quote--long" data-stagger-item><blockquote><p>"Trabalhar com o Rouglas Strapazzon é um desses privilégios que definem uma carreira. E sei que esse privilégio é para poucos.</p><p>Participei de projetos ao lado dele nos últimos anos, e cada um deles me ensinou algo que ainda carrego. Algumas dessas aprendizagens vieram de horas de conversa. Outras vieram de poucos minutos, o suficiente para me levar a construções que eu jamais imaginaria sozinho.</p><p>Rouglas tem um nível de inteligência estratégica e feeling para negócios que é difícil de descrever sem parecer exagero, mas quem já teve a oportunidade de trabalhar com ele sabe exatamente do que estou falando. A mente dele está sempre à frente, sempre conectando pontos que a maioria ainda não enxergou, sempre voltada para caminhos diversos e para o sucesso real de cada operação.</p><p>Ele já atingiu níveis altíssimos no meio corporativo, e isso é fruto de muito do que carrega como profissional e como pessoa. Os resultados que deixou em cada projeto falam por si. Mas o que talvez poucos registrem é o quanto ele transforma quem trabalha ao lado dele.</p><p>Pessoal e profissionalmente, considero o Rouglas um dos meus grandes mentores. Os insights que absorvi ao longo dessa trajetória juntos estão presentes até hoje na forma como conduzo minha carreira. Isso é legado. E legado é o que fica quando tudo o mais passa."</p></blockquote><figcaption><span class="avatar" aria-hidden="true">R</span><span>Rodrigo Merlin · Gerente Comercial, Trastevere Cidadanias</span></figcaption></figure>
         </div>
 
-        <ul class="prints" aria-label="Prints de conversas com assinantes">
-          <li class="print"><div class="print__shot" aria-hidden="true"><i></i><i></i><i class="o"></i><i></i></div><p><span class="mono">print da conversa</span>entrega da arte</p></li>
-          <li class="print"><div class="print__shot" aria-hidden="true"><i class="o"></i><i></i><i></i><i class="o"></i></div><p><span class="mono">print da conversa</span>pedido de ajuste</p></li>
-          <li class="print"><div class="print__shot" aria-hidden="true"><i></i><i class="o"></i><i class="o"></i><i></i></div><p><span class="mono">print da conversa</span>elogio do assinante</p></li>
-          <li class="print"><div class="print__shot" aria-hidden="true"><i class="o"></i><i></i><i class="o"></i><i></i></div><p><span class="mono">print da conversa</span>suporte no onboarding</p></li>
-        </ul>
       </div>
     </section>
 
@@ -542,6 +529,6 @@
   <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
   <script src="assets/vendor/lenis.min.js" defer></script>
   <script src="assets/js/sunrise.js?v=6" defer></script>
-  <script src="assets/js/main.js?v=6" defer></script>
+  <script src="assets/js/main.js?v=7" defer></script>
 </body>
 </html>

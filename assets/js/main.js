@@ -179,6 +179,30 @@
   }), { threshold: 0.6 });
   $$('[data-count]').forEach(el => counter.observe(el));
 
+  /* ---------- antes × depois: seguidores crescendo ---------- */
+  const growth = $('[data-growth]');
+  if (growth) {
+    const nums = $$('[data-to]', growth).filter(el => el.tagName !== 'I');
+    const bars = $$('i[data-to]', growth);
+    const setBar = (el, v) => el.style.setProperty('--w', v);
+    if (!reduce) bars.forEach(el => setBar(el, +el.dataset.from / +el.dataset.to));
+    const gio = new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) return;
+      gio.disconnect();
+      if (reduce) return;
+      const t0 = performance.now() + 500, dur = 1800;
+      const run = now => {
+        const p = Math.max(0, Math.min(1, (now - t0) / dur)), k = 1 - Math.pow(1 - p, 4);
+        nums.forEach(el => { const f = +el.dataset.from, t = +el.dataset.to; el.textContent = Math.round(f + (t - f) * k) + (el.dataset.suffix || ''); });
+        bars.forEach(el => { const f = +el.dataset.from, t = +el.dataset.to; setBar(el, (f + (t - f) * k) / t); });
+        if (p < 1) requestAnimationFrame(run);
+      };
+      requestAnimationFrame(run);
+    }, { threshold: 0.5 });
+    nums.forEach(el => { el.textContent = el.dataset.from + (el.dataset.suffix || ''); });
+    gio.observe(growth);
+  }
+
   /* ---------- comparar antes × depois ---------- */
   const cmp = $('[data-compare]');
   if (cmp) {
