@@ -193,7 +193,7 @@
       const t0 = performance.now() + 500, dur = 1800;
       const run = now => {
         const p = Math.max(0, Math.min(1, (now - t0) / dur)), k = 1 - Math.pow(1 - p, 4);
-        nums.forEach(el => { const f = +el.dataset.from, t = +el.dataset.to; el.textContent = Math.round(f + (t - f) * k) + (el.dataset.suffix || ''); });
+        nums.forEach(el => { const f = +el.dataset.from, t = +el.dataset.to; const dec = +(el.dataset.decimals || 0), v = f + (t - f) * k; el.textContent = (dec ? v.toFixed(dec).replace('.', ',') : Math.round(v)) + (el.dataset.suffix || ''); });
         bars.forEach(el => { const f = +el.dataset.from, t = +el.dataset.to; setBar(el, (f + (t - f) * k) / t); });
         if (p < 1) requestAnimationFrame(run);
       };
