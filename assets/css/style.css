@@ -1005,3 +1005,4 @@ details[open] .pm::after { rotate: 0deg; }
 .ig .compare__label { bottom: 12px; }
 .quote__logo { height: 28px; width: auto; object-fit: contain; } .quote__logo--sq { height: 44px; }
 .quote figcaption:has(.quote__logo) { gap: 14px; }
+.ig__t--few { background: #e4e4e4; }

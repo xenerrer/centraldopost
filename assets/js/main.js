@@ -193,13 +193,13 @@
       const t0 = performance.now() + 500, dur = 1800;
       const run = now => {
         const p = Math.max(0, Math.min(1, (now - t0) / dur)), k = 1 - Math.pow(1 - p, 4);
-        nums.forEach(el => { const f = +el.dataset.from, t = +el.dataset.to; const dec = +(el.dataset.decimals || 0), v = f + (t - f) * k; el.textContent = (dec ? v.toFixed(dec).replace('.', ',') : Math.round(v)) + (el.dataset.suffix || ''); });
+        nums.forEach(el => { const f = +el.dataset.from, t = +el.dataset.to; const dec = +(el.dataset.decimals || 0), v = f + (t - f) * k; el.textContent = (dec ? v.toFixed(dec).replace('.', ',') : el.dataset.format ? Math.round(v).toLocaleString('pt-BR') : Math.round(v)) + (el.dataset.suffix || ''); });
         bars.forEach(el => { const f = +el.dataset.from, t = +el.dataset.to; setBar(el, (f + (t - f) * k) / t); });
         if (p < 1) requestAnimationFrame(run);
       };
       requestAnimationFrame(run);
     }, { threshold: 0.5 });
-    nums.forEach(el => { el.textContent = el.dataset.from + (el.dataset.suffix || ''); });
+    nums.forEach(el => { el.textContent = (el.dataset.format ? (+el.dataset.from).toLocaleString('pt-BR') : el.dataset.from) + (el.dataset.suffix || ''); });
     gio.observe(growth);
   }
 
