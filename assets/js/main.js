@@ -182,8 +182,8 @@
   /* ---------- antes × depois: seguidores crescendo ---------- */
   const growth = $('[data-growth]');
   if (growth) {
-    const nums = $$('[data-to]', growth).filter(el => el.tagName !== 'I');
-    const bars = $$('i[data-to]', growth);
+    const nums = $$('[data-to]', growth);
+    const bars = [];
     const setBar = (el, v) => el.style.setProperty('--w', v);
     if (!reduce) bars.forEach(el => setBar(el, +el.dataset.from / +el.dataset.to));
     const gio = new IntersectionObserver(([e]) => {
@@ -204,8 +204,7 @@
   }
 
   /* ---------- comparar antes × depois ---------- */
-  const cmp = $('[data-compare]');
-  if (cmp) {
+  $$('[data-compare]').forEach(cmp => {
     const range = $('[data-compare-range]', cmp);
     const set = v => cmp.style.setProperty('--pos', v + '%');
     range.addEventListener('input', () => set(range.value));
@@ -228,7 +227,7 @@
       }, { threshold: 0.6 });
       hint.observe(cmp);
     }
-  }
+  });
 
   /* ---------- planos: mensal × anual ---------- */
   const billing = $('[data-billing]');
