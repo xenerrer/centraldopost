@@ -953,3 +953,24 @@ details[open] .pm::after { rotate: 0deg; }
 .profile__stats span { font-size: 0.85rem; color: var(--muted); }
 .profile--before .profile__stats b { color: var(--muted); }
 .growth { align-items: start; }
+
+/* ---- depoimentos: nova diagramação ---- */
+.reviews__grid { grid-template-columns: minmax(280px, 360px) minmax(0, 1fr); gap: 20px; align-items: stretch; }
+.reviews__grid .score { grid-column: 1 / -1; grid-row: auto; min-height: 0; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 6px 24px; padding: 22px clamp(22px, 3vw, 36px); }
+.reviews__grid .score__n { font-size: clamp(3rem, 2.4rem + 2vw, 4.4rem); }
+.reviews__grid .quote--video { grid-column: 1; grid-row: 2 / span 2; align-self: start; }
+.reviews__grid .quote--video video { aspect-ratio: 9 / 16; max-height: none; height: auto; }
+.reviews__grid .quote--long { grid-column: 2; align-self: start; padding: clamp(22px, 3vw, 34px); }
+.reviews__grid .quote--long blockquote { font-size: 1.04rem; line-height: 1.55; }
+.quote__more { margin-top: 2px; }
+.quote__more summary { cursor: pointer; font-weight: 700; color: var(--green); list-style: none; width: fit-content; }
+.quote__more summary::-webkit-details-marker { display: none; }
+.quote__more summary::after { content: " +"; }
+.quote__more[open] summary { margin-bottom: 12px; }
+.quote__more[open] summary::after { content: " −"; }
+.quote__more p { margin: 0 0 12px; }
+@media (max-width: 900px) {
+  .reviews__grid { grid-template-columns: 1fr; }
+  .reviews__grid .quote--video, .reviews__grid .quote--long { grid-column: 1; grid-row: auto; }
+  .reviews__grid .quote--video { width: min(100%, 360px); justify-self: center; }
+}
